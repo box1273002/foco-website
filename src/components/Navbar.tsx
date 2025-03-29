@@ -32,10 +32,11 @@ export const Navbar = () => {
 
     return (
         <div className="w-full sticky top-2 flex justify-center items-center px-4 my-4 z-10 overflow-hidden">
-            <nav className="container bg-indigo-200 bg-opacity-50 dark:bg-trueGray-800 dark:bg-opacity-60 rounded-xl backdrop-blur-lg shadow-lg flex flex-wrap items-center justify-between py-4 px-5 lg:justify-between xl:px-4 2xl:px-4">
+            <nav className="container bg-indigo-200 bg-opacity-50 dark:bg-trueGray-800 dark:bg-opacity-60 rounded-xl backdrop-blur-lg shadow-lg flex flex-wrap items-center justify-between py-4 px-5 lg:justify-between xl:px-4 2xl:px-4 overflow-hidden">
                 {/* Logo */}
                 <Link href="/" onClick={() => selectNavItem("")}>
-                    <span className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
+                    <span className={`flex items-center space-x-2 text-2xl font-medium ${pathname === "/" ? "filter drop-shadow-[0_0_15px_rgba(99,102,241,0.8)] dark:drop-shadow-[0_0_15px_rgba(185,163,186,0.8)]" : ""
+                        }`}>
                         <Image
                             src="/img/logo.svg"
                             width="32"
@@ -43,7 +44,7 @@ export const Navbar = () => {
                             alt="N"
                             className="w-8"
                         />
-                        <span>Nextly</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600 dark:from-indigo-400 dark:to-purple-500">FOCO</span>
                     </span>
                 </Link>
 
@@ -121,7 +122,7 @@ export const Navbar = () => {
                                     href={`/${menu.toLowerCase()}`}
                                     onClick={() => selectNavItem(menu)}
                                     className={`inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 ${selected === menu
-                                        ? "shadow-[0px_0px_135px_0px_rgba(68,17,95,1)] dark:shadow-[0px_0px_135px_0px_rgba(185,163,186,1)]"
+                                        ? "shadow-[0px_0px_135px_0px_rgba(68,17,95,1)] dark:shadow-[0px_0px_135px_0px_rgba(182,127,7,1)]"
                                         : ""
                                         }`}>
                                     {menu}
