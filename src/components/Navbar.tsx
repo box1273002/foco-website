@@ -54,11 +54,11 @@ export const Navbar = () => {
                                             d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
                                         />
                                     ) : (
-                                            <path
-                                                fillRule="evenodd"
-                                                d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-                                            />
-                                        )}
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                                        />
+                                    )}
                                 </svg>
                             </Disclosure.Button>
 
@@ -78,12 +78,10 @@ export const Navbar = () => {
                                             key={index}
                                             href="/"
                                             onClick={() => setSelected(item)}
-                                            className={`w-full px-4 py-2 -ml-4 rounded-md text-gray-500 dark:text-gray-300 hover:text-indigo-500 ${
-selected === item
-? "shadow-[0px_0px_30px_0px_rgba(68,17,95,1)] dark:shadow-[0px_0px_30px_0px_rgba(182,127,7,1)]"
-: ""
-}`}
-                                        >
+                                            className={`w-full px-4 py-2 -ml-4 rounded-md text-gray-500 dark:text-gray-300 hover:text-indigo-500 ${selected === item
+                                                ? "shadow-[0px_0px_30px_0px_rgba(68,17,95,1)] dark:shadow-[0px_0px_30px_0px_rgba(182,127,7,1)]"
+                                                : ""
+                                                }`}>
                                             {item}
                                         </Link>
                                     ))}
@@ -104,12 +102,10 @@ selected === item
                                 <Link
                                     href="/"
                                     onClick={() => setSelected(menu)}
-                                    className={`inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 ${
-selected === menu
-? "shadow-[0px_0px_135px_0px_rgba(68,17,95,1)] dark:shadow-[0px_0px_135px_0px_rgba(182,127,7,1)]"
-: ""
-}`}
-                                >
+                                    className={`inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 ${selected === menu
+                                        ? "shadow-[0px_0px_135px_0px_rgba(68,17,95,1)] dark:shadow-[0px_0px_135px_0px_rgba(182,127,7,1)]"
+                                        : ""
+                                        }`}>
                                     {menu}
                                 </Link>
                             </li>
