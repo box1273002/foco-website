@@ -6,11 +6,12 @@ import { Disclosure, Transition } from "@headlessui/react";
 import { useState } from "react";
 
 export const Navbar = () => {
-    const navigation = ["Product", "Features", "Pricing", "Company", "Blog"];
+
+    const navigation = ["Product", "Features", "Pricing", "Company"];
     const [selected, setSelected] = useState("");
 
     return (
-        <div className="w-full fixed top-0 flex justify-center items-center px-4 my-4 z-10">
+        <div className="w-full sticky top-2 flex justify-center items-center px-4 my-4 z-10">
             <nav className="container bg-indigo-200 bg-opacity-50 dark:bg-trueGray-800 dark:bg-opacity-60 rounded-xl backdrop-blur-lg shadow-lg flex flex-wrap items-center justify-between py-4 px-5 lg:justify-between xl:px-4 2xl:px-4">
                 {/* Logo */}
                 <Link href="/">
@@ -100,7 +101,7 @@ export const Navbar = () => {
                         {navigation.map((menu, index) => (
                             <li className="mr-3 nav__item" key={index}>
                                 <Link
-                                    href="/"
+                                    href={`/${menu.toLowerCase()}`}
                                     onClick={() => setSelected(menu)}
                                     className={`inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 ${selected === menu
                                         ? "shadow-[0px_0px_135px_0px_rgba(68,17,95,1)] dark:shadow-[0px_0px_135px_0px_rgba(182,127,7,1)]"
