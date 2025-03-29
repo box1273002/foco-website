@@ -31,7 +31,7 @@ export function Footer() {
                         <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
                             FOCO is a company dedicated to helping you take back control.
                             If you have any questions or need assistance, please don't hesitate to reach out.
-                            We're here to help you build a more focused, distronline  experience.
+                            We're here to help you build a more focused, distraction free online experience.
                         </div>
                     </div>
 
