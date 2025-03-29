@@ -15,7 +15,7 @@ export const Navbar = () => {
 
   return (
     <div className="w-full fixed top-0 flex justify-center items-center px-4 my-4 z-10">
-      <nav className="container bg-opacity-75 bg-indigo-100 dark:bg-trueGray-800 rounded-xl backdrop-blur-xl flex flex-wrap items-center justify-betweenp py-4 px-5  lg:justify-between xl:px-1">
+      <nav className="container bg-indigo-100 bg-opacity-50 dark:bg-trueGray-800 dark:bg-opacity-60 rounded-xl backdrop-blur-lg shadow-lg flex flex-wrap items-center justify-between py-4 px-5 lg:justify-between xl:px-1">
         {/* Logo  */}
         <Link href="/">
           <span className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
