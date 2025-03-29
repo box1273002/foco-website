@@ -1,20 +1,40 @@
 "use client";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import Image from "next/image";
 import { Disclosure, Transition } from "@headlessui/react";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+
+function useNavSelection(navigation, pathname) {
+    const getSelectedFromPath = (path) => {
+        const normPath = path?.replace("/", "").toLowerCase() || "";
+        if (!normPath) return "";
+        const matchedItem = navigation.find(item => item.toLowerCase() === normPath);
+        return matchedItem || "";
+    };
+
+    const [selected, setSelected] = useState(() => getSelectedFromPath(pathname));
+
+    const selectNavItem = (item) => {
+        setSelected(item || "");
+    };
+
+    return [selected, selectNavItem];
+}
 
 export const Navbar = () => {
-
     const navigation = ["Product", "Features", "Pricing", "Company"];
-    const [selected, setSelected] = useState("");
+    const pathname = usePathname(); // Get current path with Next.js hook
+
+    // Initialize selected state based on current path (server and client compatible)
+    const [selected, selectNavItem] = useNavSelection(navigation, pathname);
 
     return (
-        <div className="w-full sticky top-2 flex justify-center items-center px-4 my-4 z-10">
+        <div className="w-full sticky top-2 flex justify-center items-center px-4 my-4 z-10 overflow-hidden">
             <nav className="container bg-indigo-200 bg-opacity-50 dark:bg-trueGray-800 dark:bg-opacity-60 rounded-xl backdrop-blur-lg shadow-lg flex flex-wrap items-center justify-between py-4 px-5 lg:justify-between xl:px-4 2xl:px-4">
                 {/* Logo */}
-                <Link href="/">
+                <Link href="/" onClick={() => selectNavItem("")}>
                     <span className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
                         <Image
                             src="/img/logo.svg"
@@ -78,11 +98,8 @@ export const Navbar = () => {
                                         <Link
                                             key={index}
                                             href="/"
-                                            onClick={() => setSelected(item)}
-                                            className={`w-full px-4 py-2 -ml-4 rounded-md text-gray-500 dark:text-gray-300 hover:text-indigo-500 ${selected === item
-                                                ? "shadow-[0px_0px_30px_0px_rgba(68,17,95,1)] dark:shadow-[0px_0px_30px_0px_rgba(182,127,7,1)]"
-                                                : ""
-                                                }`}>
+                                            onClick={() => selectNavItem(item)}
+                                            className={`w-full px-4 py-2 -ml-4 rounded-md text-gray-500 dark:text-gray-300 hover:text-indigo-500`}>
                                             {item}
                                         </Link>
                                     ))}
@@ -102,9 +119,9 @@ export const Navbar = () => {
                             <li className="mr-3 nav__item" key={index}>
                                 <Link
                                     href={`/${menu.toLowerCase()}`}
-                                    onClick={() => setSelected(menu)}
+                                    onClick={() => selectNavItem(menu)}
                                     className={`inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 ${selected === menu
-                                        ? "shadow-[0px_0px_135px_0px_rgba(68,17,95,1)] dark:shadow-[0px_0px_135px_0px_rgba(182,127,7,1)]"
+                                        ? "shadow-[0px_0px_135px_0px_rgba(68,17,95,1)] dark:shadow-[0px_0px_135px_0px_rgba(185,163,186,1)]"
                                         : ""
                                         }`}>
                                     {menu}
