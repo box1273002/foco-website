@@ -10,11 +10,10 @@ export const Navbar = () => {
     "Features",
     "Pricing",
     "Company",
-    "Blog",
   ];
 
   return (
-    <div className="w-full fixed top-0 flex justify-center items-center px-4 my-4 z-10">
+    <div className="w-full sticky top-2 flex justify-center items-center px-4 my-4 z-10">
       <nav className="container bg-indigo-100 bg-opacity-50 dark:bg-trueGray-800 dark:bg-opacity-60 rounded-xl backdrop-blur-lg shadow-lg flex flex-wrap items-center justify-between py-4 px-5 lg:justify-between xl:px-1">
         {/* Logo  */}
         <Link href="/">
@@ -89,7 +88,7 @@ export const Navbar = () => {
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
             {navigation.map((menu, index) => (
               <li className="mr-3 nav__item" key={index}>
-                <Link href="/" className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
+                <Link href={`/${menu.toLowerCase()}`} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
                   {menu}
                 </Link>
               </li>
