@@ -63,13 +63,13 @@ export const Navbar = () => {
                     <span className={`flex items-center space-x-2 text-2xl font-medium ${pathname === "/" ? "filter drop-shadow-[0_0_15px_rgba(99,102,241,0.8)] dark:drop-shadow-[0_0_15px_rgba(185,163,186,0.8)]" : ""
                         }`}>
                         <Image
-                            src="/img/logo.svg"
-                            width="32"
-                            height="32"
-                            alt="N"
-                            className="w-8"
+                            src="/img/logo.png"
+                            width="40"
+                            height="40"
+                            alt="FOCO"
+                            className="w-10"
                         />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600 dark:from-indigo-400 dark:to-purple-500">FOCO</span>
+                        <span className="text-white dark:text-white">FOCO</span>
                     </span>
                 </Link>
 
