@@ -23,29 +23,10 @@ function useNavSelection(navigation, pathname) {
     return [selected, selectNavItem];
 }
 
-const menuColors = {
-    "Product": {
-        text: "text-rose-600 dark:text-rose-400",
-        glow: "drop-shadow-[0_0_30px_rgba(225,29,72,1)] dark:drop-shadow-[0_0_30px_rgba(251,113,133,1)]"
-    },
-    "Features": {
-        text: "text-emerald-600 dark:text-emerald-400",
-        glow: "drop-shadow-[0_0_30px_rgba(5,150,105,1)] dark:drop-shadow-[0_0_30px_rgba(52,211,153,1)]"
-    },
-    "Pricing": {
-        text: "text-purple-600 dark:text-purple-400",
-        glow: "drop-shadow-[0_0_30px_rgba(37,99,235,1)] dark:drop-shadow-[0_0_30px_rgba(153,209,250,1)]"
-    },
-    "Company": {
-        text: "text-amber-600 dark:text-amber-400",
-        glow: "drop-shadow-[0_0_30px_rgba(217,119,6,1)] dark:drop-shadow-[0_0_30px_rgba(251,191,36,1)]"
-    }
-};
-
 // Helper function to get menu styling
-const getMenuStyle = (menuName, isSelected) => {
+const getMenuStyle = (isSelected) => {
     if (!isSelected) return "text-gray-800 dark:text-gray-200";
-    return `${menuColors[menuName]?.text || "text-indigo-600 dark:text-indigo-400"} underline underline-offset-4 filter ${menuColors[menuName]?.glow || "drop-shadow-[0_0_15px_rgba(79,70,229,0.8)]"}`;
+    return "text-purple-600 dark:text-purple-400 underline underline-offset-4 filter drop-shadow-[0_0_30px_rgba(37,99,235,1)] dark:drop-shadow-[0_0_30px_rgba(153,209,250,1)]";
 };
 
 export const Navbar = () => {
@@ -119,16 +100,13 @@ export const Navbar = () => {
                                 leaveTo="opacity-0 transform scale-95"
                             >
                                 <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
-                                    {navigation.map((item, index) => (
+                                    {navigation.map((menu, index) => (
                                         <Link
                                             key={index}
-                                            href={`/${item.toLowerCase()}`}
-                                            onClick={() => selectNavItem(item)}
-                                            className={`w-full px-4 py-2 -ml-4 rounded-md ${selected === item
-                                                ? `${menuColors[item]?.text || "text-indigo-500"} underline underline-offset-4 filter ${menuColors[item]?.glow || "drop-shadow-[0_0_8px_rgba(99,102,241,0.8)]"}`
-                                                : "text-gray-500 dark:text-gray-300 hover:text-indigo-500"
-                                                }`}>
-                                            {item}
+                                            href={`/${menu.toLowerCase()}`}
+                                            onClick={() => selectNavItem(menu)}
+                                            className={`inline-block px-4 py-2 text-lg font-normal no-underline rounded-md ${getMenuStyle(selected === menu)}`}>
+                                            {menu}
                                         </Link>
                                     ))}
                                     <Link href="/" className="w-full px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5">
@@ -148,7 +126,7 @@ export const Navbar = () => {
                                 <Link
                                     href={`/${menu.toLowerCase()}`}
                                     onClick={() => selectNavItem(menu)}
-                                    className={`inline-block px-4 py-2 text-lg font-normal no-underline rounded-md ${getMenuStyle(menu, selected === menu)}`}>
+                                    className={`inline-block px-4 py-2 text-lg font-normal no-underline rounded-md ${getMenuStyle(selected === menu)}`}>
                                     {menu}
                                 </Link>
                             </li>
