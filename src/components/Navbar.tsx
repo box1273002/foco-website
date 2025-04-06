@@ -25,16 +25,16 @@ function useNavSelection(navigation, pathname) {
 
 const menuColors = {
     "Product": {
-        text: "text-blue-600 dark:text-blue-400",
-        glow: "drop-shadow-[0_0_30px_rgba(37,99,235,1)] dark:drop-shadow-[0_0_30px_rgba(96,165,250,1)]"
+        text: "text-rose-600 dark:text-rose-400",
+        glow: "drop-shadow-[0_0_30px_rgba(225,29,72,1)] dark:drop-shadow-[0_0_30px_rgba(251,113,133,1)]"
     },
     "Features": {
         text: "text-emerald-600 dark:text-emerald-400",
         glow: "drop-shadow-[0_0_30px_rgba(5,150,105,1)] dark:drop-shadow-[0_0_30px_rgba(52,211,153,1)]"
     },
     "Pricing": {
-        text: "text-rose-600 dark:text-rose-400",
-        glow: "drop-shadow-[0_0_30px_rgba(225,29,72,1)] dark:drop-shadow-[0_0_30px_rgba(251,113,133,1)]"
+        text: "text-purple-600 dark:text-purple-400",
+        glow: "drop-shadow-[0_0_30px_rgba(37,99,235,1)] dark:drop-shadow-[0_0_30px_rgba(153,209,250,1)]"
     },
     "Company": {
         text: "text-amber-600 dark:text-amber-400",
@@ -75,7 +75,6 @@ export const Navbar = () => {
 
                 {/* Theme and Get Started */}
                 <div className="gap-3 nav__item mr-2 lg:flex ml-auto lg:ml-0 lg:order-2">
-                    <ThemeChanger />
                     <div className="hidden mr-3 lg:flex nav__item">
                         <Link href="/" className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5">
                             Get Started
