@@ -26,7 +26,7 @@ export const Testimonials = () => {
                 <div className="">
                     <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
                         <p className="text-2xl leading-normal ">
-                            As a dad of three running my own business, FOCO has been life-changing - <Mark>I'm present with my kids</Mark> and still getting more work done than before.
+                            The <Mark>coin system</Mark> completely changed how I view my screen time. Now I'm strategic about which apps deserve my attention instead of mindlessly scrolling.
                         </p>
 
                         <Avatar
