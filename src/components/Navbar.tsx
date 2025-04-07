@@ -28,8 +28,8 @@ function useNavSelection(navigation: string[], pathname: string): [string, (item
 
 // Helper function to get menu styling
 const getMenuStyle = (isSelected: Boolean) => {
-  if (!isSelected) return "text-gray-800 dark:text-gray-200";
-  return "text-purple-600 dark:text-purple-400 underline underline-offset-4 filter drop-shadow-[0_0_30px_rgba(37,99,235,1)] dark:drop-shadow-[0_0_30px_rgba(153,209,250,1)]";
+  if (!isSelected) return "text-gray-200";
+  return "text-purple-400 underline underline-offset-4 filter drop-shadow-[0_0_30px_rgba(153,209,250,1)]";
 };
 
 export const Navbar = () => {
@@ -41,10 +41,10 @@ export const Navbar = () => {
 
   return (
     <div className="w-full sticky top-2 flex justify-center items-center px-4 my-4 z-10 overflow-hidden">
-      <nav className="container bg-indigo-200 bg-opacity-50 dark:bg-trueGray-800 dark:bg-opacity-60 rounded-xl backdrop-blur-lg shadow-lg flex flex-wrap items-center justify-between py-4 px-5 lg:justify-between xl:px-4 2xl:px-4 overflow-hidden">
+      <nav className="container   bg-trueGray-800 bg-opacity-60 rounded-xl backdrop-blur-lg shadow-lg flex flex-wrap items-center justify-between py-4 px-5 lg:justify-between xl:px-4 2xl:px-4 overflow-hidden">
         {/* Logo */}
         <Link href="/" onClick={() => selectNavItem("")}>
-          <span className={`flex items-center space-x-2 text-2xl font-medium ${pathname === "/" ? "filter drop-shadow-[0_0_15px_rgba(99,102,241,0.8)] dark:drop-shadow-[0_0_15px_rgba(185,163,186,0.8)]" : ""
+          <span className={`flex items-center space-x-2 text-2xl font-medium ${pathname === "/" ? "filter drop-shadow-[0_0_15px_rgba(185,163,186,0.8)]" : ""
             }`}>
             <Image
               src="/img/logo.png"
@@ -53,7 +53,7 @@ export const Navbar = () => {
               alt="FOCO"
               className="w-10"
             />
-            <span className="text-white dark:text-white">FOCO</span>
+            <span className="text-white">FOCO</span>
           </span>
         </Link>
 
@@ -72,7 +72,7 @@ export const Navbar = () => {
             <>
               <Disclosure.Button
                 aria-label="Toggle Menu"
-                className="px-2 py-1 text-gray-500 rounded-md lg:hidden hover:text-indigo-500 dark:text-gray-300 ">
+                className="px-2 py-1  rounded-md lg:hidden hover:text-indigo-500 text-gray-300 ">
                 <svg
                   className="w-6 h-6 fill-current"
                   xmlns="http://www.w3.org/2000/svg"

@@ -26,7 +26,7 @@ export default function Features() {
         <table className="w-full  table-auto  overflow-hidden shadow-sm">
           <thead >
             <tr>
-              <th className="text-center px-4 py-3 w-1/2  border-b border-gray-600">Features</th>
+              <th className="text-center px-4 py-3 w-1/2  border-b border-gray-600">Feature</th>
               <th className="text-center px-4 py-3 border-b border-gray-600">Free</th>
               <th className="text-center px-4 py-3 border-b border-gray-600">Premium</th>
             </tr>
