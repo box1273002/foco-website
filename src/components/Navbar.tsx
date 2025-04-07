@@ -6,25 +6,28 @@ import Image from "next/image";
 import { Disclosure, Transition } from "@headlessui/react";
 import { usePathname } from "next/navigation";
 
-function useNavSelection(navigation, pathname) {
-  const getSelectedFromPath = (path) => {
+function useNavSelection(navigation: string[], pathname: string): [string, (item: string) => void] {
+  const getSelectedFromPath = (path: string | undefined): string => {
     const normPath = path?.replace("/", "").toLowerCase() || "";
     if (!normPath) return "";
     const matchedItem = navigation.find(item => item.toLowerCase() === normPath);
     return matchedItem || "";
   };
 
-  const [selected, setSelected] = useState(() => getSelectedFromPath(pathname));
+  // Initialize state using the pathname to find the selected item
+  const [selected, setSelected] = useState<string>(() => getSelectedFromPath(pathname));
 
-  const selectNavItem = (item) => {
-    setSelected(item || "");
+  // Function to set the selected nav item
+  const selectNavItem = (item: string) => {
+    setSelected(item || ""); // Fallback to an empty string if the item is falsy
   };
 
   return [selected, selectNavItem];
 }
 
+
 // Helper function to get menu styling
-const getMenuStyle = (isSelected) => {
+const getMenuStyle = (isSelected: Boolean) => {
   if (!isSelected) return "text-gray-800 dark:text-gray-200";
   return "text-purple-600 dark:text-purple-400 underline underline-offset-4 filter drop-shadow-[0_0_30px_rgba(37,99,235,1)] dark:drop-shadow-[0_0_30px_rgba(153,209,250,1)]";
 };

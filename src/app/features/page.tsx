@@ -1,6 +1,9 @@
 import { Container } from "@/components/Container";
 import { Check, X } from 'lucide-react';
 import React from 'react';
+type FeatureType = {
+  [key: string]: JSX.Element[];  // An array of JSX elements (yes/no)
+};
 export default function Features() {
   const yes = <td className="text-center text-2xl  border-b border-gray-800 text-[#8a2be2] drop-shadow-[0_0_5px_rgba(153,209,250,1)]">
     ✓
@@ -8,7 +11,7 @@ export default function Features() {
   const no = <td className="text-center border-b border-gray-800">
     <X className="text-gray-700 inline-block" />
   </td>
-  const features = {
+  const features: FeatureType = {
     "Cross platform support": [yes, yes],
     "App locking": [yes, yes],
     "App dependant coin schedules": [yes, yes],
