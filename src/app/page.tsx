@@ -8,6 +8,7 @@ import { Faq } from "@/components/Faq";
 import { Cta } from "@/components/Cta";
 
 import { benefitOne, benefitTwo } from "@/components/data";
+import BarChart from "@/components/BarChart";
 export default function Home() {
     return (
         <Container>
@@ -25,32 +26,29 @@ export default function Home() {
             <Benefits imgPos="right" data={benefitTwo} />
 
             <SectionTitle
-                preTitle="Watch a video"
-                title="Learn how to fullfil your needs"
+                preTitle="Still not convinced?"
+                title="The Data"
             >
-                This section is to highlight a promo or demo video of your product.
-                Analysts says a landing page with video has 3% more conversion rate. So,
-                don&apos;t forget to add one. Just like this.
+                In the US, average screen time per day hit 7 hours and 3 minutes in 2025 according to Backlinko.
+                Given that the average person spends 15 hours and 39 minutes awake per day, that's 45% of your waking hours spent in front of a screen.
+                We can do better than this. And we have the answer.
             </SectionTitle>
 
-            <Video videoId="fZ0D0cnR88E" />
+            <BarChart />
+
+            <center>
+                *Data is for illustrative purposes only. We will update this chart when we have more users, and thus more data.
+            </center>
 
             <SectionTitle
-                preTitle="Testimonials"
-                title="Here's what our customers said"
+                preTitle="But don't just take our word for it..."
+                title="What our customers say"
             >
-                Testimonials is a great way to increase the brand trust and awareness.
-                Use this section to highlight your popular customers.
+                We asked customers what they thought of FOCO after having used it. This is what they had to say.
             </SectionTitle>
 
             <Testimonials />
 
-            <SectionTitle preTitle="FAQ" title="Frequently Asked Questions">
-                Answer your customers possible questions here, it will increase the
-                conversion rate as well as support or chat requests.
-            </SectionTitle>
-
-            <Faq />
             <Cta />
         </Container>
     );
