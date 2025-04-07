@@ -9,24 +9,27 @@ import { Footer } from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "FOCO - Screen Time Control & App Blocker | Take Back Control",
-    description: "FOCO is your personal screen time management app. Set daily limits, block distracting apps, and take back control of your time. Stay focused and improve productivity by regulating app usage.",
+  title: "FOCO",
+  description: "FOCO is your personal screen time management app. Set daily limits, block distracting apps, and take back control of your time. Stay focused and improve productivity by regulating app usage.",
+  icons: {
+    icon: "/img/foco.svg", // replace with your actual favicon path
+  },
 };
 
 export default function RootLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <html lang="en" suppressHydrationWarning>
-            <body className={inter.className}>
-                <ThemeProvider attribute="class">
-                    <Navbar />
-                    <div>{children}</div>
-                    <Footer />
-                </ThemeProvider>
-            </body>
-        </html>
-    );
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider attribute="class">
+          <Navbar />
+          <div>{children}</div>
+          <Footer />
+        </ThemeProvider>
+      </body>
+    </html>
+  );
 }
